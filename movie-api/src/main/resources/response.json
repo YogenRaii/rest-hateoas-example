@@ -1,0 +1,12 @@
+{
+  "id": 1201,
+  "http":"//localhost:8085/movies/1201",
+  "name": "In Search of Lost Time",
+  "directorName": "Marcel Proust",
+  "rating": "3.5/5",
+  "_links": {
+    "self": {
+      "href": "http://localhost:8085/movies/1201"
+    }
+  }
+}
