@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by rajkumar on 12/25/2016.
@@ -24,11 +25,9 @@ public class MovieRepository {
         };
     }
 
-    public Movie findOneById(Long movieId){
-        Movie movie = movies.stream()
+    public Optional<Movie> findOneById(Long movieId){
+        return movies.stream()
                         .filter(m -> m.getId() == movieId)
-                        .findAny()
-                        .orElse(null);
-        return movie;
+                        .findAny();
     }
 }

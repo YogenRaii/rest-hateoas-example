@@ -27,9 +27,8 @@ public class MovieController {
     @RequestMapping("/movies/{id}")
     public ResponseEntity<Movie> getBook(@PathVariable("id") Long id) {
         log.trace("getBook({})", id);
-        Optional<Movie> movieOptional = Optional.ofNullable(movieRepository.findOneById(id));
 
-        return movieOptional
+        return movieRepository.findOneById(id)
                 .map(movie -> {
                     Resource<Movie> movieResource = new Resource<>(movie);
                     movieResource.add(linkTo(methodOn(MovieController.class).getBook(id)).withSelfRel());
